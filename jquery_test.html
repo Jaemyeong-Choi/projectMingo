@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>mouseover demo</title>
+  <style>
+      #box{
+          width:100px;
+          height: 100px;
+          background-color: lightcoral;
+      }
+      #box.hover{
+          background-color: lightblue;
+          border-radius: 50px;
+      }
+
+  </style>
+  <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+  <script>
+
+    var star_idx = document.querySelectorAll('img.star_none');
+    $(document).ready(function(){
+        /*
+        $('.star_none').hover(function(){  
+            $('.star_none').attr('src', 'star_color.png');
+        }, function(){
+            $('.star_none').attr('src', 'star_none.png');
+        });*/
+
+        $('.star_none').each(function(i,v){
+            $(v).hover(
+                function(){
+                    $(this).prevAll().attr('src', 'star_color.png');
+                    $(this).attr('src', 'star_color.png');
+
+                },
+                function(){
+                    $(this).prevAll().attr('src', 'star_none.png');
+                    $(this).attr('src', 'star_none.png');
+                }
+            );
+        });
+            // $('#star_none_1').hover(function(){  
+            //     $('#star_none_1').attr('src', 'star_color.png');
+            // }, function(){
+            //     $('#star_none_1').attr('src', 'star_none.png');
+            // });
+            // $('#star_none_2').hover(function(){
+            //     $('#star_none_2').attr('src', 'star_color.png');
+            // }, function(){
+            //     $('#star_none_2').attr('src', 'star_none.png');
+            // });
+            // $('#star_none_3').hover(function(){
+            //     $('#star_none_3').attr('src', 'star_color.png');
+            // }, function(){
+            //     $('#star_none_3').attr('src', 'star_none.png');
+            // });
+            // $('#star_none_4').hover(function(){
+            //     $('#star_none_4').attr('src', 'star_color.png');
+            // }, function(){
+            //     $('#star_none_4').attr('src', 'star_none.png');
+            // });
+            // $('#star_none_5').hover(function(){
+            //     $('#star_none_5').attr('src', 'star_color.png');
+            // }, function(){
+            //     $('#star_none_5').attr('src', 'star_none.png');
+            // });
+            
+        
+    });
+
+      
+
+
+      $(document).ready(function(){
+        $('#box').hover(function(){
+            $('#box').addClass('hover');
+        }, function(){
+            $('#box').removeClass('hover');
+        });
+      });
+    //   $(document).ready(function(){
+    //     $('h1').css('color', 'lightblue');
+    //     $('h1').css('background', 'gray');
+    //   });
+      
+
+    //   $(document).ready(function(){
+    //       var src = $('script').attr('src');
+    //       alert(src);
+    //   });
+    //   $(document).ready(function(){
+    //       $('img').attr('alt', 'jquery 이용한 속성 지정');
+    //       $('img').attr('src', 'http://placehold.it/100x100');
+    //       $('img').attr('width', '100');
+    //   });
+    //   $(document).ready(function(){
+          
+    //       $('img').attr({
+    //         alt: 'jquery 이용한 속성 지정',
+    //         src: 'http://placehold.it/100x100',
+    //         width: 100
+    //       });
+    //   });
+    //   $(document).ready(function(){
+    //       $('img').attr({
+    //         alt: 'jquery 이용한 속성 지정',
+    //         src: function(index){
+    //             var size = (index+1)*100;
+    //             return 'http://placehold.it/' + size + 'x100';
+    //         } 
+    //       });
+    //   });
+
+    //   $(document).ready(function(){
+    //     $('.box').css('float', 'left');
+    //     $('.box').css('margin', 10);
+    //     $('.box').css('width', 100);
+    //     $('.box').css('height', 100);
+    //     $('.box').css('background', 'lightblue');
+    //   });
+    //   $(document).ready(function(){
+    //     $('.box').css({
+    //         float : 'left',
+    //         margin : 10,
+    //         width : 100,
+    //         height : 100,
+    //         background : 'lightblue'
+    //     });
+    //   });
+
+    //   $(document).ready(function(){
+    //     var output = "";
+    //     for (var i=0; i<256; i++){
+    //         output += '<div></div>';
+    //     }
+    //     document.body.innerHTML = output;
+
+    //     $('div').css({
+    //         height : 2,
+    //         background : function(i){
+    //             return 'rgb(' + i + ',' + i + ',' + i + ')';
+    //         }
+    //     });
+    //   });
+
+        $(document).ready(function(){
+            $('h1').click(function(){
+                alert('클릭');
+            });
+        });
+
+
+        $(document).ready(function(){
+            $('h1').hover(function(){
+                $(this).css({
+                    background : 'lightcoral',
+                    color : 'white'
+                });
+            }, function(){
+                $(this).css({
+                    background : '',
+                    color : ''
+                });
+            });
+        });
+
+
+
+  </script>
+</head>
+<body>
+    <h1>click</h1>
+    <h1>header</h1>
+    <h1>header</h1>
+    <h1>header</h1>
+
+    
+    <br>
+    <br>
+    <br>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    
+
+    <div id="box"></div>
+    <br>
+    <img class="star_none" id="star_none_1" src="star_none.png">
+    <img class="star_none" id="star_none_2" src="star_none.png">
+    <img class="star_none" id="star_none_3" src="star_none.png">
+    <img class="star_none" id="star_none_4" src="star_none.png">
+    <img class="star_none" id="star_none_5" src="star_none.png">
+    <br>
+    <img id="star_color" src="star_color.png">
+</body>
+</html>
